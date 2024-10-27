@@ -33,6 +33,7 @@ class _QuizState extends State<Quiz> {
       setState(() {
         switchScreen('result-screen');
       });
+      // chosenAnswers = [];
     }
     if (chosenAnswers.length < regionQuestions.length) {
       chosenAnswers.add(answer);
@@ -57,7 +58,9 @@ class _QuizState extends State<Quiz> {
                     ? QuestionsScreen(
                         saveAnswers: saveAnswers,
                       )
-                    : ResultScreen()),
+                    : ResultScreen(
+                        chosenAnswers: chosenAnswers,
+                      )),
           );
         });
   }
